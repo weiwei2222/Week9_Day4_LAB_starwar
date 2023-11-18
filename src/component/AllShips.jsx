@@ -25,11 +25,15 @@ function AllShips() {
 
   return (
     <div>
+      <div className="nav">STAR WARS STAPSHIPS</div>
       <Link to="/">
-        {allShips &&
+        {allShips ? (
           allShips.results.map((ship, index) => (
             <StarShipCard key={index} shipObj={ship} />
-          ))}
+          ))
+        ) : (
+          <h1>Loading... </h1>
+        )}
       </Link>
     </div>
   );
